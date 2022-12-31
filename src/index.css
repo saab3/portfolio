@@ -10,6 +10,7 @@ html{
 }
 
 #root{
+  overflow-x: hidden;
   height: 100%;
   padding-top: 0;
   padding-bottom: 0;
@@ -17,6 +18,10 @@ html{
   white-space: nowrap;
   --purple: #7f00ff;
   --pink: #e100ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 body{
@@ -56,6 +61,7 @@ body{
   flex-direction: column;
   align-items:start;
   justify-content: center;
+  margin-left: .5rem;
 }
 
 .left>p,.left>h1{
@@ -67,7 +73,7 @@ body{
   font-weight: bolder;
 }
 
-.left>p{
+.left:first-child,.iam{
   letter-spacing: .75rem;
 }
 
@@ -259,7 +265,7 @@ a,a:visited,a:active{
 
 .iam{
   font-weight:bold;
-  letter-spacing:0;
+  /* letter-spacing:0; */
   font-size:72px}
 
 .front{
@@ -280,12 +286,18 @@ a,a:visited,a:active{
  overflow-y:hidden;
 }
 
+@media only screen and (max-width: 1200px){
+  .right{
+    display: none;
+  }
+}
+
 @media only screen and (max-width: 900px) {
   .right{
     display: none;
   }
   #root{
-  padding-inline: 2rem;
+  padding-inline: 0rem;
   font-size:14px;
   white-space: nowrap;
 
@@ -303,5 +315,23 @@ a,a:visited,a:active{
   #projects{
     overflow-y: auto;
   }
+  .front{
+    font-size:20px;
+    letter-spacing:.5rem ;
+    color:#2072D3; 
+    font-weight:bold;
+    text-align: initial;
 }
+.App{
+  overflow-y: scroll;
+  /* width:100%; */
+  padding-inline: 2rem;
+}
+}
+
+/* @media only screen and (max-width: 600px){
+  #root{
+    overflow-y: auto;
+  }
+}  */
 
