@@ -1,0 +1,292 @@
+@import "https://fonts.googleapis.com/css2?family=Poppins";
+
+html{
+  height:100vh;
+  padding: 0;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  /* overflow-y:hidden; */
+  transition: all 1s ease;
+}
+
+#root{
+  height: 100%;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-inline: 7rem;
+  white-space: nowrap;
+  --purple: #7f00ff;
+  --pink: #e100ff;
+}
+
+body{
+  background-color: #090909;
+  color: #FFFFFF;
+  font-family: Poppins;
+  font-size:18px;
+  height: 100%;
+  margin: 0;
+}
+
+.App{
+  height:100%
+}
+
+.curly{
+  color: #2072D3;
+}
+
+.title{
+  font-weight: bold;
+}
+
+.container{
+  height: calc(100% - 3rem);
+  color: white;
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content:space-between;
+}
+
+.left{
+  height:100%;
+  display:inherit;
+  flex-direction: column;
+  align-items:start;
+  justify-content: center;
+}
+
+.left>p,.left>h1{
+  margin:0px
+}
+
+.left>h1{
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+.left>p{
+  letter-spacing: .75rem;
+}
+
+.circle-container{
+  position: absolute;
+  left:-40rem;
+  top: calc(24rem + 13px);
+  height: 16rem;
+  overflow-y:hidden;
+}
+
+.box{
+  position: relative;
+  margin: 3rem;
+  width: 100rem;
+  height: 100rem;  
+  border-radius: 50%;
+  display: inline-block;
+  top:3rem;
+  background-color: #090909;
+}
+
+a{
+  cursor: pointer;
+}
+
+a:hover{
+  background: -webkit-linear-gradient(left,#2072D3, #f257ee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+
+
+.box:before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(-1deg, #0061ff 73%, #f257ee 109% );
+  transform: translate3d(24px, -50px, 0) scale(0.95);
+  filter: blur(25px);
+  opacity: var(0.7);
+  transition: opacity 0.3s;
+  border-radius: inherit;
+}
+
+/* 
+* Prevents issues when the parent creates a 
+* stacking context. (For example, using the transform
+* property )
+*/
+.box::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: inherit;
+  border-radius: inherit;
+}
+      
+      
+      
+      
+
+.buttons{
+  display:flex;
+  flex-direction:row;
+  justify-content: start;
+  align-items: center;
+  margin-top: 1rem;
+  gap:1rem
+}
+
+button{
+  background: #090909 ;
+  color:#FFFFFF;
+  border-radius: 2rem;
+  padding-inline:1rem;
+  font-weight: bold;
+  font-size: 1.75rem; 
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  position: relative;
+  outline: none;
+  border: none;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 0.75em 1.75em;
+  border-radius: 50px;
+  display: inline-block;
+  color: #fff;
+  
+  /* Our gradient */
+}
+button::before{
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 5px;
+  left: 5%;
+  height: 110%;
+  width: 100%;
+  opacity: 0.8;
+  border-radius: 50px;
+  background: black;
+    /* Blurring the element for shadow effect */
+    -webkit-filter: blur(8px);
+    -moz-filter: blur(8px);
+    -o-filter: blur(8px);
+    -ms-filter: blur(8px);
+    filter: blur(8px);
+}
+
+button::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -10px;
+  left: -1%;
+  height: 100%;
+  width: 95%;
+  opacity: 0.4;
+  border-radius: 50px;
+  
+  /* Declaring our shadow color inherit from the parent (button) */
+  background: -webkit-gradient(linear, left top, right top, from(var(--purple)), to(var(--pink)));
+  background: linear-gradient(to right, var(--purple), var(--pink));
+  
+  /* Blurring the element for shadow effect */
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(8px);
+  
+  /* Transition for the magic */
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+button:hover::after {
+  /* Changing blur effect */
+  -webkit-filter: blur(4px);
+  -moz-filter: blur(4px);
+  -o-filter: blur(4px);
+  -ms-filter: blur(4px);
+  filter: blur(3px);
+
+  /* And change the style properties */
+  width: 100%;
+  bottom: -5px;
+  left: 0;
+}
+
+button:hover:active::after {
+  -webkit-filter: blur(10px);
+  -moz-filter: blur(10px);
+  -o-filter: blur(10px);
+  -ms-filter: blur(10px);
+  filter: blur(10px);
+}
+
+.right{
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:end;
+  align-items:end;
+}
+
+a,a:visited,a:active{
+  color:white;
+  text-decoration:none
+}
+
+
+.iam{
+  font-weight:bold;
+  letter-spacing:0;
+  font-size:72px}
+
+.front{
+    font-size:20px;
+    letter-spacing:1rem ;
+    color:#2072D3; 
+    font-weight:bold;
+    text-align: initial;
+}
+
+@media only screen and (max-width: 900px) {
+  .right{
+    display: none;
+  }
+  #root{
+  padding-inline: 2rem;
+  font-size:14px;
+  white-space: nowrap;
+
+  }
+
+  .iam{
+    font-size: 36px; font-weight: bold;
+  }
+  .circle-container{
+    display: none;
+  }
+  .buttons{
+    margin-top: 5rem;
+  }
+}
