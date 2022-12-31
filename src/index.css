@@ -270,6 +270,16 @@ a,a:visited,a:active{
     text-align: initial;
 }
 
+#projects{
+ height:calc(100%-3rem); 
+ display:flex;
+ flex-direction:row;
+ flex-wrap:wrap;
+ justify-items:center;
+ align-items:center;
+ overflow-y:hidden;
+}
+
 @media only screen and (max-width: 900px) {
   .right{
     display: none;
@@ -290,4 +300,8 @@ a,a:visited,a:active{
   .buttons{
     margin-top: 5rem;
   }
+  #projects{
+    overflow-y: auto;
+  }
 }
+

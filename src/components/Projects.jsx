@@ -8,9 +8,9 @@ import { motion } from "framer-motion"
 
 function Projects() {
   return (
-    <motion.div animate={{ y: [500,0] }} transition={{   type: "spring",
+    <motion.div  animate={{ y: [500,0] }} transition={{   type: "spring",
     damping: 10,
-    stiffness: 100 }} id="projects" style={{height:"calc(100%-3rem)" , display:"flex",flexDirection:"row",flexWrap:"wrap",justifyItems:"center",alignItems:"center",overflowY:"hidden"}}> 
+    stiffness: 100 }} id="projects" > 
 
     <div  style={{display:"grid",height:"100%",justifyItems:"center",alignItems:"center",gap:"1rem",width:"100%", gridTemplateColumns:"repeat(auto-fit,minmax(20rem,1fr))"}}>
         {[{title:'Landing Page',image:gameball , link:"https://gameball-task.vercel.app/"},
