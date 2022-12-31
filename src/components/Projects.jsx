@@ -4,12 +4,15 @@ import gameball from "../assets/gameball.png"
 import myreads from "../assets/myreads.png"
 import qrcode from "../assets/qrcode.png"
 import wouldyourather from "../assets/wouldyourather.png"
+import { motion } from "framer-motion"
 
 function Projects() {
   return (
-    <div id="projects" style={{height:"calc(100%-3rem)" , display:"flex",flexDirection:"row",flexWrap:"wrap",justifyContent:"center",alignItems:"center"}}> 
+    <motion.div animate={{ y: [500,0] }} transition={{   type: "spring",
+    damping: 10,
+    stiffness: 100 }} id="projects" style={{height:"calc(100%-3rem)" , display:"flex",flexDirection:"row",flexWrap:"wrap",justifyItems:"center",alignItems:"center",overflowY:"hidden"}}> 
 
-    <div  style={{display:"grid",height:"100%",justifyContent:"center",alignItems:"center",gap:"1rem",width:"100%", gridTemplateColumns:"repeat(auto-fit,minmax(20rem,1fr))"}}>
+    <div  style={{display:"grid",height:"100%",justifyItems:"center",alignItems:"center",gap:"1rem",width:"100%", gridTemplateColumns:"repeat(auto-fit,minmax(20rem,1fr))"}}>
         {[{title:'Landing Page',image:gameball , link:"https://gameball-task.vercel.app/"},
         {title:'Book Shelf',image:myreads,link:"https://my-reads-reactjs.netlify.app/"},
         {title:"QR code Simple design",image:qrcode,link:"https://res-qr-card.netlify.app/"},
@@ -17,7 +20,7 @@ function Projects() {
             return <Project title={project.title} image={project.image} link={project.link} />
         })}
     </div>
-        </div>
+        </motion.div>
   )
 }
 
